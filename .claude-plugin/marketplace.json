@@ -1,0 +1,12 @@
+{
+  "name": "line-voice-notebook",
+  "owner": { "name": "大亨堡" },
+  "description": "LINE 語音記事本：在 LINE 講話就幫你記事、分類、提醒、同步手機行事曆（全免費）",
+  "plugins": [
+    {
+      "name": "line-voice-notebook",
+      "source": "./plugins/line-voice-notebook",
+      "description": "LINE 語音記事本：在 LINE 講話 → 記事本＋自動分類＋行程提醒＋手機行事曆。說「幫我裝 LINE 語音記事本」開始安裝（全免費，Mac）。"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+.DS_Store
+.setup.json
+wrangler.toml
+.wrangler/
+node_modules/
