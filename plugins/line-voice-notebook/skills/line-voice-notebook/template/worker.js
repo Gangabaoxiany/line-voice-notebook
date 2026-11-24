@@ -166,7 +166,7 @@ async function alertAdmin(env, kind, detail, logOnly = false) {
 const qa = (label, text) => ({ type: "action", action: { type: "message", label, text } });
 const qpb = (label, data, displayText) => ({ type: "action", action: { type: "postback", label: label.slice(0, 20), data, displayText: displayText || label } });
 async function quick(env, extra = []) {
-  const items = [...extra.slice(0, 8), qa("📅 這個月", "這個月"), qa("📌 待辦", "待辦"), qa("🔔 今天", "今天"), qa("📒 記事本", "記事本")];
+  const items = [...extra.slice(0, 7), qa("📅 這個月", "這個月"), qa("📌 待辦", "待辦"), qa("🔔 今天", "今天"), qa("🌙 明天", "明天"), qa("📒 記事本", "記事本")];
   if (!(await env.DB.get("cal_installed"))) items.push(qa("📲 裝到手機行事曆", "裝行事曆"));
   return { items: items.slice(0, 13) };
 }
@@ -849,7 +849,7 @@ async function command(env, text) {
   if (/^(下個月|下個月行事曆)$/.test(t)) return monthMsgs(env, nextYm(ymOf(twDate())));
   if (/^(這週|這禮拜|這星期|行程表|預約表|未來一週)$/.test(t)) return weekTable(env);
   if (/^(今天|今天的行程|今天有什麼)$/.test(t)) return dayView(env, twDate());
-  if (/^(明天|明天的行程|明天有什麼)$/.test(t)) return dayView(env, twDate(1));
+  if (/^(明天|明日|明天的行程|明天有什麼|明天預約|明天的預約|查看明天預約)$/.test(t)) return dayView(env, twDate(1));
   if (/^(待辦|待辦清單|待辦事項|還沒做的|代辦)$/.test(t)) return todoView(env);
   if (/^(記事本|日誌|今天記了什麼|今天講了什麼)$/.test(t)) return notebookView(env);
   if (/^(昨天記了什麼|昨天的記事本|昨天講了什麼)$/.test(t)) return notebookView(env, twDate(-1));

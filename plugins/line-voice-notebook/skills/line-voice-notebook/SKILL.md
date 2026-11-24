@@ -61,3 +61,13 @@ description: 「LINE 語音記事本」安裝精靈＋維修。幫使用者用�
 - 看資料：`node tool.mjs list 7`／`todo`／`log 2026-01-31`／`dict`
 - 各種壞法和測試方法 → references/卡關排除.md
 - 改了程式 → 上線前 `node tool.mjs validate` 要全部 200
+
+## 更新到新版（已經裝好的人）
+他說「更新 LINE 記事本」「記事本有新功能嗎」，或你發現他工作資料夾的 `worker.js` 跟這支 skill 的 `template/worker.js` 不一樣時：
+1. 先 `claude plugin update line-voice-notebook@line-voice-notebook`（或請他在對話打 `/plugin` 更新），讓 skill 拿到最新的 `template/`
+2. 只換程式、不動設定：`cp "<這支 skill 的資料夾>/template/worker.js" <工作資料夾>/worker.js`（**不要**蓋 `config.json`、`.setup.json`、`說明.md`）
+3. `node tool.mjs deploy` → `node tool.mjs validate` 全部 200 → 請他在 LINE 打「今天」，看底下按鈕有新的
+4. 把下面「版本紀錄」裡他還沒有的功能，用一兩句話告訴他、補進他的 `說明.md`
+
+## 版本紀錄
+- 1.0.1（2026-11-24）：每則回覆底下多一顆「🌙 明天」按鈕，按一下列出明天全部的行程和有期限的待辦；也聽得懂「明天預約」「查看明天預約」

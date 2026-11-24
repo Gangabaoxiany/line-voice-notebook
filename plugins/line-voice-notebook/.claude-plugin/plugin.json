@@ -1,6 +1,6 @@
 {
   "name": "line-voice-notebook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "LINE 語音記事本：在 LINE 講話 → 記事本＋自動分類＋行程提醒＋手機行事曆。說「幫我裝 LINE 語音記事本」開始安裝（全免費，Mac）。",
   "author": { "name": "大亨堡" },
   "keywords": ["line", "語音", "記事本", "提醒", "行事曆", "cloudflare"]
